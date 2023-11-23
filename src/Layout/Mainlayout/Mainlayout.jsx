@@ -1,7 +1,13 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../../Pages/Shared/Navbar/Navbar/Navbar";
+
 const Mainlayout = () => {
   return (
     <div>
-      <h1>this is main layout</h1>
+      <Navbar></Navbar>
+      <div className="max-w-7xl mx-auto">
+        <Outlet></Outlet>
+      </div>
     </div>
   );
 };
