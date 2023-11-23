@@ -15,7 +15,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="absolute flex justify-end w-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
