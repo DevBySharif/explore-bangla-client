@@ -2,7 +2,7 @@ import { FaPlayCircle } from "react-icons/fa";
 import traveller from "../../../assets/Traveller 1.png";
 const Banner = () => {
   return (
-    <div className="hero">
+    <div className="hero ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={traveller} className="max-w-xl" />
 

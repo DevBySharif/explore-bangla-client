@@ -57,7 +57,7 @@ const Navbar = () => {
   );
 
   return (
-    <div>
+    <div className="w-full">
       <div className="absolute flex justify-end w-full">
         {isHomePage && (
           <svg

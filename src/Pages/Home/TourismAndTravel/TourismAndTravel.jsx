@@ -19,6 +19,7 @@ const TourismAndTravel = () => {
           role="tab"
           className="tab"
           aria-label="Overview"
+          checked
         />
         <div
           role="tabpanel"
@@ -88,8 +89,7 @@ const TourismAndTravel = () => {
           name="my_tabs_2"
           role="tab"
           className="tab"
-          aria-label="Our Packages"
-          checked
+          aria-label="Packages"
         />
         <div
           role="tabpanel"
@@ -140,7 +140,7 @@ const TourismAndTravel = () => {
           name="my_tabs_2"
           role="tab"
           className="tab"
-          aria-label="Meet Our Tour Guides"
+          aria-label="Guides"
         />
         <div
           role="tabpanel"
