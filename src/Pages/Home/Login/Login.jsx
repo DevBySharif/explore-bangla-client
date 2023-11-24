@@ -11,6 +11,7 @@ const Login = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const Login = () => {
     signIn(email, password)
       .then(() => {
         toast.success("Login successful");
-        navigate(location?.state ? location.state : "/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setLoginError(error.message);
@@ -64,7 +65,7 @@ const Login = () => {
               required
             />
             <label className="label">
-              <a href="#" className="label-text-alt text-white link link-hover">
+              <a href="#" className="label-text-alt text-black link link-hover">
                 Forgot password?
               </a>
             </label>
@@ -75,11 +76,9 @@ const Login = () => {
 
           {loginError && <p className="text-red-500">{loginError}</p>}
 
-          <p className="flex justify-between text-white">
+          <p className="flex justify-between ">
             Don't have an account?
-            <Link className="text-green-200" to="/register">
-              Register
-            </Link>
+            <Link to="/register">Register</Link>
           </p>
           <SocialLogin></SocialLogin>
         </form>
