@@ -82,7 +82,7 @@ const TiltCard = () => {
         }}
         className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
       >
-        <p
+        <div
           style={{
             transform: "translateZ(50px)",
           }}
@@ -102,7 +102,7 @@ const TiltCard = () => {
               </p>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </motion.div>
   );

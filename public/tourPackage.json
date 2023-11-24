@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "spotPhoto": "https://i.ibb.co/LR6vbD2/atik-chowdhury-v-L6mbb-HZk-I-unsplash.jpg",
+    "tourType": "Adventure",
+    "tripTitle": "Mystic Hills Expedition",
+    "price": "$799"
+  },
+  {
+    "id": 2,
+    "spotPhoto": "https://i.ibb.co/JmH4vhL/sean-oulashin-KMn4-VEe-EPR8-unsplash.jpg",
+    "tourType": "Nature",
+    "tripTitle": "Serenity Valley Retreat",
+    "price": "$599"
+  },
+  {
+    "id": 3,
+    "spotPhoto": "https://i.ibb.co/myNHzYy/cox-s-bazar.png",
+    "tourType": "Nature",
+    "tripTitle": "Sea Beach Tour",
+    "price": "$499"
+  }
+]
