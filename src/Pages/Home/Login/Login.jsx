@@ -2,8 +2,8 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hook/useAuth";
+import loginImg from "../../../assets/login.svg";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
-// import loginImg from "../assets/loginimg.png";
 
 const Login = () => {
   const { signIn } = useAuth();
@@ -32,14 +32,14 @@ const Login = () => {
 
   return (
     <div
-      className="relative  h-screen  flex justify-end items-center lg:pr-36 font-poppins"
-      //   style={{
-      //     backgroundImage: `url(${loginImg})`,
-      //     height: "100vh",
-      //     backgroundSize: "cover",
-      //   }}
+      className="relative flex font-poppins justify-center place-content-center items-center w-full"
+      style={{
+        backgroundImage: `url(${loginImg})`,
+        height: "100vh",
+        backgroundSize: "cover",
+      }}
     >
-      <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-transparent  absolute">
+      <div className="card flex-shrink-0 lg:w-1/3 bg-transparent shadow-xl absolute">
         <form onSubmit={handleLogin} className="card-body">
           <div className="form-control ">
             <label className="label">
@@ -71,7 +71,7 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-accent">Login</button>
           </div>
 
           {loginError && <p className="text-red-500">{loginError}</p>}

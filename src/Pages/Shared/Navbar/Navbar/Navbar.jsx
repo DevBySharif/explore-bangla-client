@@ -14,19 +14,44 @@ const Navbar = () => {
   const navLink = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link
+          className="font-poppins font-medium hover:border-b-4 border-orange-500"
+          to="/"
+        >
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/">Community</Link>
+        <Link
+          className="font-poppins font-medium hover:border-b-4 border-orange-500"
+          to="/"
+        >
+          Community
+        </Link>
       </li>
       <li>
-        <Link to="/">Blogs</Link>
+        <Link
+          className="font-poppins font-medium hover:border-b-4 border-orange-500"
+          to="/"
+        >
+          Blogs
+        </Link>
       </li>
       <li>
-        <Link to="/">About Us</Link>
+        <Link
+          className="font-poppins font-medium hover:border-b-4 border-orange-500"
+          to="/"
+        >
+          About Us
+        </Link>
       </li>
       <li>
-        <Link to="/">Contact Us</Link>
+        <Link
+          className="font-poppins font-medium hover:border-b-4 border-orange-500"
+          to="/"
+        >
+          Contact Us
+        </Link>
       </li>
     </>
   );

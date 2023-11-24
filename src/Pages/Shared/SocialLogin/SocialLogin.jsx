@@ -11,7 +11,7 @@ const SocialLogin = () => {
       <div className="divider">Continue With</div>
       <div className="flex justify-center">
         <button
-          className="font-bold flex justify-center items-center btn"
+          className="font-bold flex justify-center items-center btn glass"
           onClick={() => handleSocialLogin(googleLogin)}
         >
           <FaGoogle></FaGoogle>

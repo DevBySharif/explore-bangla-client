@@ -29,7 +29,7 @@ const TourismAndTravel = () => {
           </h1>
           <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
-              <video autoPlay loop muted>
+              <video className="rounded-lg" autoPlay loop muted>
                 <source src={vid1} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -42,7 +42,7 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-              <video autoPlay loop muted>
+              <video className="rounded-lg" autoPlay loop muted>
                 <source src={vid2} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -55,7 +55,7 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-              <video autoPlay loop muted>
+              <video className="rounded-lg" autoPlay loop muted>
                 <source src={vid3} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -68,7 +68,7 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
-              <video autoPlay loop muted>
+              <video className="rounded-lg" autoPlay loop muted>
                 <source src={vid4} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
