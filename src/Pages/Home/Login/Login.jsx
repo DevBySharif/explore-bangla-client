@@ -32,7 +32,7 @@ const Login = () => {
 
   return (
     <div
-      className="relative  h-screen  flex justify-end items-center lg:pr-36"
+      className="relative  h-screen  flex justify-end items-center lg:pr-36 font-poppins"
       //   style={{
       //     backgroundImage: `url(${loginImg})`,
       //     height: "100vh",

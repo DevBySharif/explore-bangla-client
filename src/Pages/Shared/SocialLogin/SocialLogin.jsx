@@ -8,13 +8,14 @@ const SocialLogin = () => {
   };
   return (
     <div>
-      <div className="divider text-white">Continue With</div>
-      <div className="flex justify-center text-white">
+      <div className="divider">Continue With</div>
+      <div className="flex justify-center">
         <button
-          className="font-bold"
+          className="font-bold flex justify-center items-center btn"
           onClick={() => handleSocialLogin(googleLogin)}
         >
           <FaGoogle></FaGoogle>
+          Sign in With Google
         </button>
       </div>
     </div>

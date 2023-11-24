@@ -96,7 +96,7 @@ const TiltCard = () => {
               <h2 className="text-[#1E1D4C] font-semibold text-xl">
                 Calculated Weather
               </h2>
-              <p className="font-poppins text-base text-[#5E6282]">
+              <p className="font-poppins text-[#5E6282]">
                 Our service ensures you have the most up-to-date weather
                 information tailored to your location.
               </p>
@@ -178,7 +178,7 @@ const TiltCard2 = () => {
               <h2 className="text-[#1E1D4C] font-semibold text-xl">
                 Best Flights
               </h2>
-              <p className="font-poppins text-base text-[#5E6282]">
+              <p className="font-poppins  text-[#5E6282]">
                 Discover the Best Flights with our intuitive platform that
                 analyzes a multitude of factors, including pricing, schedules,
                 and convenience.
@@ -262,7 +262,7 @@ const TiltCard3 = () => {
               <h2 className="text-[#1E1D4C] font-semibold text-xl">
                 Local Events
               </h2>
-              <p className="font-poppins text-base text-[#5E6282]">
+              <p className="font-poppins  text-[#5E6282]">
                 Stay in the know with our Local Events service, designed to keep
                 you informed about the latest happenings in your area.
               </p>
@@ -344,7 +344,7 @@ const TiltCard4 = () => {
               <h2 className="text-[#1E1D4C] font-semibold text-xl">
                 Customization
               </h2>
-              <p className="font-poppins text-base text-[#5E6282]">
+              <p className="font-poppins  text-[#5E6282]">
                 Tailor your experience with our Customization service, offering
                 personalized solutions to meet your unique needs.
               </p>
