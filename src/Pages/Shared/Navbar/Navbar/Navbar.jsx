@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../../assets/logo.svg";
 
 const Navbar = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   const navLink = (
     <>
       <li>
-        <Link to="home">Home</Link>
+        <Link to="/">Home</Link>
       </li>
 
       <li>
@@ -15,22 +17,25 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full">
+    <div>
       <div className="absolute flex justify-end w-full">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="504"
-          height="524"
-          viewBox="0 0 704 724"
-          fill="none"
-        >
-          <path
-            d="M22.3069 222C-18.0931 153.2 5.4736 13.3333 22.3069 -48L701.807 -149L766.307 122.5L727.807 723.5C649.14 724.5 473.707 717 401.307 679C310.807 631.5 351.807 555 276.807 515C201.807 475 244.807 369.5 218.807 329.5C192.807 289.5 72.8069 308 22.3069 222Z"
-            fill="#FFF1DA"
-          />
-        </svg>
+        {isHomePage && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="504"
+            height="524"
+            viewBox="0 0 704 724"
+            fill="none"
+            className="lg:block md:block hidden"
+          >
+            <path
+              d="M22.3069 222C-18.0931 153.2 5.4736 13.3333 22.3069 -48L701.807 -149L766.307 122.5L727.807 723.5C649.14 724.5 473.707 717 401.307 679C310.807 631.5 351.807 555 276.807 515C201.807 475 244.807 369.5 218.807 329.5C192.807 289.5 72.8069 308 22.3069 222Z"
+              fill="#FFF1DA"
+            />
+          </svg>
+        )}
       </div>
-      <div className="navbar  max-w-7xl mx-auto relative">
+      <div className="navbar relative  lg:max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

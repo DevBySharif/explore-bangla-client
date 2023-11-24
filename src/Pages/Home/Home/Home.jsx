@@ -1,10 +1,11 @@
 import Banner from "../../Shared/Banner/Banner";
+import BestServices from "../BestServices/BestServices";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <h1>this is home</h1>
+      <BestServices></BestServices>
     </div>
   );
 };
