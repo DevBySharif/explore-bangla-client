@@ -164,7 +164,7 @@ const TiltCard2 = () => {
         }}
         className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
       >
-        <p
+        <div
           style={{
             transform: "translateZ(50px)",
           }}
@@ -185,7 +185,7 @@ const TiltCard2 = () => {
               </p>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </motion.div>
   );
@@ -247,7 +247,7 @@ const TiltCard3 = () => {
         }}
         className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
       >
-        <p
+        <div
           style={{
             transform: "translateZ(50px)",
           }}
@@ -268,7 +268,7 @@ const TiltCard3 = () => {
               </p>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </motion.div>
   );
@@ -330,7 +330,7 @@ const TiltCard4 = () => {
         }}
         className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
       >
-        <p
+        <div
           style={{
             transform: "translateZ(50px)",
           }}
@@ -350,7 +350,7 @@ const TiltCard4 = () => {
               </p>
             </div>
           </div>
-        </p>
+        </div>
       </div>
     </motion.div>
   );

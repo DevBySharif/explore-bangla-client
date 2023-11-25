@@ -1,10 +1,12 @@
+import { FaHeart } from "react-icons/fa";
+import usePackages from "../../../Hook/usePackages";
 import vid1 from "../../../assets/1.mp4";
 import vid2 from "../../../assets/2.mp4";
 import vid3 from "../../../assets/3.mp4";
 import vid4 from "../../../assets/4.mp4";
-import img1 from "../../../assets/Sajek.png";
-import img2 from "../../../assets/Sreemongol.png";
 const TourismAndTravel = () => {
+  const packages = usePackages();
+  console.log(packages);
   return (
     <div>
       <div>
@@ -19,7 +21,7 @@ const TourismAndTravel = () => {
           role="tab"
           className="tab"
           aria-label="Overview"
-          checked
+          defaultChecked
         />
         <div
           role="tabpanel"
@@ -96,42 +98,35 @@ const TourismAndTravel = () => {
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
-              <figure>
-                <img src={img1} alt="Shoes" />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Cox&apos;s Bazar</h2>
-                <p>Tour Type: Nature</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+            {packages.map((tourPackage) => (
+              <div
+                key={tourPackage.id}
+                className="card card-compact w-96 h-96 bg-base-100 shadow-xl"
+              >
+                <figure>
+                  <img
+                    className="h-[250px]"
+                    src={tourPackage.spotPhoto}
+                    alt="Shoes"
+                  />
+                </figure>
+                <div className="card-body">
+                  <div className="flex justify-between">
+                    <h2 className="card-title">{tourPackage.tripTitle}</h2>
+                    <FaHeart className="text-3xl text-pink-500"></FaHeart>
+                  </div>
+                  <p className="font-poppins">
+                    Tour Type: {tourPackage.tourType}
+                  </p>
+                  <p className="font-poppins">Price: ${tourPackage.price}</p>
+                  <div className="card-actions font-poppins">
+                    <button className="btn btn-block btn-warning uppercase">
+                      View Package
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
-              <figure>
-                <img src={img2} alt="Shoes" />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
-            <div className="card card-compact w-96 h-96 bg-base-100 shadow-xl">
-              <figure>
-                <img src={img1} alt="Shoes" />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
