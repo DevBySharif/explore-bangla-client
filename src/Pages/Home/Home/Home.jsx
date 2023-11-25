@@ -2,6 +2,7 @@ import Banner from "../../Shared/Banner/Banner";
 import BestServices from "../BestServices/BestServices";
 import TourType from "../TourType/TourType";
 import TourismAndTravel from "../TourismAndTravel/TourismAndTravel";
+import TouristStories from "../TouristStories/TouristStories";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <BestServices></BestServices>
       <TourismAndTravel></TourismAndTravel>
       <TourType></TourType>
+      <TouristStories></TouristStories>
     </div>
   );
 };
