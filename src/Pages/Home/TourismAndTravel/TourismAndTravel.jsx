@@ -1,4 +1,5 @@
 import { FaHeart } from "react-icons/fa";
+import useGuides from "../../../Hook/useGuides";
 import usePackages from "../../../Hook/usePackages";
 import vid1 from "../../../assets/1.mp4";
 import vid2 from "../../../assets/2.mp4";
@@ -6,7 +7,8 @@ import vid3 from "../../../assets/3.mp4";
 import vid4 from "../../../assets/4.mp4";
 const TourismAndTravel = () => {
   const packages = usePackages();
-  console.log(packages);
+  const guides = useGuides();
+  console.log(guides);
   return (
     <div>
       <div>
@@ -97,30 +99,32 @@ const TourismAndTravel = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {packages.map((tourPackage) => (
               <div
                 key={tourPackage.id}
-                className="card card-compact w-96 h-96 bg-base-100 shadow-xl"
+                className="card card-compact  h-96 bg-base-100 shadow-xl"
               >
                 <figure>
                   <img
-                    className="h-[250px]"
+                    className="h-[250px] w-full"
                     src={tourPackage.spotPhoto}
                     alt="Shoes"
                   />
                 </figure>
-                <div className="card-body">
+                <div className="card-body group">
                   <div className="flex justify-between">
                     <h2 className="card-title">{tourPackage.tripTitle}</h2>
-                    <FaHeart className="text-3xl text-pink-500"></FaHeart>
+                    <FaHeart className="text-3xl text-red-500 transition-all duration-150 ease-in hover:scale-125 cursor-pointer slide-in-elliptic-top-fwd"></FaHeart>
                   </div>
-                  <p className="font-poppins">
+                  <p className="font-poppins  group-hover:font-bold">
                     Tour Type: {tourPackage.tourType}
                   </p>
-                  <p className="font-poppins">Price: ${tourPackage.price}</p>
-                  <div className="card-actions font-poppins">
-                    <button className="btn btn-block btn-warning uppercase">
+                  <p className="font-poppins group-hover:font-bold">
+                    Price: ${tourPackage.price}
+                  </p>
+                  <div className="card-actions font-poppins ">
+                    <button className="btn btn-block btn-warning uppercase group-hover:text-white">
                       View Package
                     </button>
                   </div>
@@ -141,7 +145,56 @@ const TourismAndTravel = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
-          Tab content 3
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {guides.map((guide) => (
+              <div
+                key={guide._id}
+                className=" bg-white flex items-center justify-center min-h-screen"
+              >
+                <section className="w-full max-w-[430px] relative  rounded-[6px] shadow-xl backdrop-blur-sm mx-2 overflow-hidden">
+                  <a
+                    target="_blank"
+                    className="absolute text-[#231f39] bg-orange-400 rounded-[4px] top-6 left-6 px-2 py-1 text-sm font-bold roll-in-blurred-right"
+                    rel="noreferrer"
+                  >
+                    PRO
+                  </a>
+                  <a target="_blank" className="" rel="noreferrer">
+                    <img
+                      src={guide.profilePicture}
+                      className="rounded-full w-[120px] mx-auto my-10 p-0 border-[6px] box-content border-[#231f39] shadow-[0px_27px_16px_-11px_rgba(31,27,56,0.25)] transition-all duration-150 ease-in hover:scale-105 cursor-pointer slide-in-elliptic-top-fwd"
+                    />
+                  </a>
+                  <h1 className="text-xl font-bold text-center">
+                    {guide.name}
+                  </h1>
+                  <small className="block my-1 text-center">Bangladesh</small>
+
+                  {guide.workExperience.map((experience) => (
+                    <p key={experience.position} className="mt-5 text-center">
+                      {experience.position}
+                    </p>
+                  ))}
+                  <div className="flex items-center justify-center gap-2 w-[80%] mx-auto mt-5 mb-10">
+                    <button className="flex-1 border border-orange-300 rounded-[4px] py-3 text-white bg-orange-400 transition-all duration-150 ease-in hover:bg-orange-500">
+                      Message
+                    </button>
+                    <button className="flex-1 border border-orange-300 rounded-[4px] py-3 text-white bg-orange-400 transition-all duration-150 ease-in hover:bg-orange-500">
+                      Details
+                    </button>
+                  </div>
+                  <div className="text-black p-4 text-sm font-semibold backdrop-blur-sm">
+                    <p>SKILLS</p>
+                    <ul className="flex mt-4 flex-wrap items-center justify-start gap-2 gap-y-3 [&>li]:border-2 [&>li]:border-yellow-300 [&>li]:px-3 [&>li]:py-1 [&>li]:rounded-[4px] [&>li]:transition-all [&>li]:duration-150 [&>li]:ease-in [&>li:hover]:scale-105 [&>li:hover]:cursor-pointer">
+                      {guide.skills.map((skill, indx) => (
+                        <li key={indx}>{skill}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

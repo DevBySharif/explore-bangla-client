@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "profilePicture": "https://i.ibb.co/MDJ74Wz/smiling-traveller-with-map-camera.jpg",
+    "contactDetails": {
+      "email": "aisha@example.com",
+      "phone": "+1 123-456-7890",
+      "socialMedia": {
+        "twitter": "@aisha_guide",
+        "instagram": "@aisha_tours"
+      }
+    },
+    "education": "Bachelor's in Tourism Management",
+    "skills": ["Multilingual Guide", "Adventure Tours", "Cultural Expert"],
+    "workExperience": [
+      {
+        "position": "Senior Tour Guide",
+        "company": "ExploreWonders Ltd",
+        "years": "5"
+      },
+      {
+        "position": "Tour Coordinator",
+        "company": "Global Expeditions Inc",
+        "years": "3"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Rahim Khan",
+    "profilePicture": "https://i.ibb.co/th75vZY/smiling-portrait-male-traveler-standing-front-sea-holding-map-hand.jpg",
+    "contactDetails": {
+      "email": "rahim@example.com",
+      "phone": "+1 987-654-3210",
+      "socialMedia": {
+        "facebook": "/rahim.tourguide",
+        "linkedin": "/in/rahim-khan"
+      }
+    },
+    "education": "Master's in Cultural Studies",
+    "skills": ["Historical Tours", "Language Specialist", "Custom Itineraries"],
+    "workExperience": [
+      {
+        "position": "Lead Cultural Guide",
+        "company": "Timeless Explorations",
+        "years": "6"
+      },
+      {
+        "position": "Cultural Specialist",
+        "company": "Heritage Journeys LLC",
+        "years": "4"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Nadia Islam",
+    "profilePicture": "https://i.ibb.co/XJcSGJc/smiling-traveller-woman-with-backpack-holding-map-pointing.jpg",
+    "contactDetails": {
+      "email": "nadia@example.com",
+      "phone": "+1 555-123-4567",
+      "socialMedia": {
+        "instagram": "@nadia.travels",
+        "twitter": "@nadia_adventures"
+      }
+    },
+    "education": "Bachelor's in Environmental Science",
+    "skills": ["Eco-friendly Tours", "Nature Exploration", "Photography"],
+    "workExperience": [
+      {
+        "position": "Environmental Tour Guide",
+        "company": "NatureQuest Tours",
+        "years": "4"
+      },
+      {
+        "position": "Adventure Coordinator",
+        "company": "Green Horizons Expeditions",
+        "years": "3"
+      }
+    ]
+  }
+]
