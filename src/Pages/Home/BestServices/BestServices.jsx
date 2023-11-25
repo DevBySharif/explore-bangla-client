@@ -9,7 +9,7 @@ const BestServices = () => {
     <div className="grid w-full mx-auto mb-12">
       <div className="text-center mb-12">
         <small className="text-base font-poppins font-medium text-[#5E6282] text-center">
-          CATEGORY
+          SERVICE
         </small>
         <h1 className="text-5xl font-bold capitalize text-[#14183E] mt-3">
           We Offer Best Services

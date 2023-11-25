@@ -8,11 +8,14 @@ import vid4 from "../../../assets/4.mp4";
 const TourismAndTravel = () => {
   const packages = usePackages();
   const guides = useGuides();
-  console.log(guides);
+
   return (
-    <div>
-      <div>
-        <h1 className="text-5xl text-[#14183E] font-bold my-12 text-center">
+    <div className="mt-24">
+      <div className="text-center">
+        <small className="text-base  font-poppins font-medium text-[#5E6282] text-center">
+          GUIDE
+        </small>
+        <h1 className="text-5xl text-[#14183E] font-bold mb-20 mt-3 text-center">
           Tourism and Travel Guide
         </h1>
       </div>
@@ -29,12 +32,17 @@ const TourismAndTravel = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-base-300 rounded-box p-6"
         >
-          <h1 className="text-4xl my-12">
+          <h1 className="text-4xl my-12 text-center capitalize">
             Here are some tourist location for you
           </h1>
-          <div className="carousel w-full">
+          <div className="carousel">
             <div id="slide1" className="carousel-item relative w-full">
-              <video className="rounded-lg" autoPlay loop muted>
+              <video
+                className="rounded-lg lg:h-[500px] w-full"
+                autoPlay
+                loop
+                muted
+              >
                 <source src={vid1} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -47,7 +55,12 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
-              <video className="rounded-lg" autoPlay loop muted>
+              <video
+                className="rounded-lg lg:h-[500px] w-full"
+                autoPlay
+                loop
+                muted
+              >
                 <source src={vid2} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -60,7 +73,12 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-              <video className="rounded-lg" autoPlay loop muted>
+              <video
+                className="rounded-lg lg:h-[500px] w-full"
+                autoPlay
+                loop
+                muted
+              >
                 <source src={vid3} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -73,7 +91,12 @@ const TourismAndTravel = () => {
               </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
-              <video className="rounded-lg" autoPlay loop muted>
+              <video
+                className="rounded-lg lg:h-[500px] w-full"
+                autoPlay
+                loop
+                muted
+              >
                 <source src={vid4} type="video/mp4" />
               </video>
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
