@@ -111,17 +111,30 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-info btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user.photoURL} alt={user.displayName} />
+                  <img src={user?.photoURL} alt={user?.displayName} />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-content rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-content rounded-box w-auto"
               >
                 <li>
-                  <button className="btn btn-sm text-white btn-ghost">
-                    {user.displayName}
+                  <button className="btn btn-sm text-white btn-ghost pointer-events-none">
+                    {user?.displayName}
                   </button>
+                </li>
+                <li>
+                  <button className="btn btn-sm text-white btn-ghost pointer-events-none">
+                    {user?.email}
+                  </button>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard"
+                    className="text-white btn btn-ghost btn-sm"
+                  >
+                    Dashboard
+                  </Link>
                 </li>
                 <li>
                   <button

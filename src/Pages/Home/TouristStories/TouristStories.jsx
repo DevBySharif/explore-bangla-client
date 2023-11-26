@@ -5,7 +5,6 @@ import useStories from "../../../Hook/useStories";
 
 const TouristStories = () => {
   const stories = useStories();
-  console.log(stories);
 
   useEffect(() => {
     const keenSlider = new KeenSlider("#keen-slider", {
@@ -48,7 +47,7 @@ const TouristStories = () => {
       <section>
         <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
           <div className="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
-            <h2 className="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+            <h2 className="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl capitalize">
               Read travel stories from our customers
             </h2>
 
@@ -56,7 +55,7 @@ const TouristStories = () => {
               <button
                 aria-label="Previous slide"
                 id="keen-slider-previous"
-                className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+                className="rounded-full border border-orange-600 p-3 text-orange-600 transition hover:bg-orange-600 hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +76,7 @@ const TouristStories = () => {
               <button
                 aria-label="Next slide"
                 id="keen-slider-next"
-                className="rounded-full border border-rose-600 p-3 text-rose-600 transition hover:bg-rose-600 hover:text-white"
+                className="rounded-full border border-orange-600 p-3 text-orange-600 transition hover:bg-orange-600 hover:text-white"
               >
                 <svg
                   className="h-5 w-5 rtl:rotate-180"

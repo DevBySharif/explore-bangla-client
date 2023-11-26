@@ -4,20 +4,93 @@
     "spotPhoto": "https://i.ibb.co/LR6vbD2/atik-chowdhury-v-L6mbb-HZk-I-unsplash.jpg",
     "tourType": "Adventure",
     "tripTitle": "Mystic Hills Expedition",
-    "price": "$799"
+    "price": "$799",
+    "about": "Embark on a thrilling adventure with the Mystic Hills Expedition. This tour is designed for adrenaline seekers and nature enthusiasts. Traverse challenging terrains, discover hidden caves, and immerse yourself in the rich culture of tribal villages. Experience the perfect blend of excitement and cultural exploration.",
+    "tourPlan": [
+      {
+        "day": 1,
+        "activities": [
+          "Embark on an invigorating morning hike to the summit of Mystic Peak, where panoramic views await. Connect with nature as you navigate rocky terrains.",
+          "In the afternoon, experience the thrill of rock climbing, challenging your limits and enjoying the breathtaking surroundings.",
+          "As the day winds down, gather around a cozy campfire, sharing stories and savoring a delicious outdoor meal."
+        ]
+      },
+      {
+        "day": 2,
+        "activities": [
+          "Discover the secrets of hidden caves, where mystical formations await exploration. Illuminated only by headlamps, the caves reveal their wonders.",
+          "Indulge in the excitement of rafting down the Mystic River, navigating through exhilarating rapids and soaking in the scenic beauty."
+        ]
+      },
+      {
+        "day": 3,
+        "activities": [
+          "Embark on a canopy walk through the lush jungle, suspended high above the ground. Observe unique flora and fauna from a new perspective.",
+          "Visit a tribal village, immersing yourself in their rich culture and traditions. Interact with locals and gain insights into their way of life."
+        ]
+      }
+    ]
   },
   {
     "id": 2,
     "spotPhoto": "https://i.ibb.co/JmH4vhL/sean-oulashin-KMn4-VEe-EPR8-unsplash.jpg",
     "tourType": "Nature",
     "tripTitle": "Serenity Valley Retreat",
-    "price": "$599"
+    "price": "$599",
+    "about": "Immerse yourself in the tranquility of nature with the Serenity Valley Retreat. This tour offers a peaceful escape into lush landscapes, guided bird-watching tours, and rejuvenating spa experiences. Discover the magic of butterfly gardens and indulge in stargazing under the valley's night sky. Unwind in serenity and reconnect with the natural world.",
+    "tourPlan": [
+      {
+        "day": 1,
+        "activities": [
+          "Embark on a serene nature walk in the heart of Serenity Valley, surrounded by lush greenery and the soothing sounds of nature.",
+          "Enjoy a peaceful picnic by the riverbanks, where you can relax, unwind, and appreciate the tranquility of the surroundings."
+        ]
+      },
+      {
+        "day": 2,
+        "activities": [
+          "Partake in a bird-watching tour, discovering a diverse array of bird species inhabiting the serene valley. Binoculars in hand, enjoy the beauty of nature.",
+          "Indulge in a day of relaxation at the spa, where skilled therapists pamper you with rejuvenating treatments amidst the valley's beauty."
+        ]
+      },
+      {
+        "day": 3,
+        "activities": [
+          "Visit a captivating butterfly garden, surrounded by vibrant flowers and fluttering wings. Learn about the life cycle of these enchanting creatures.",
+          "Experience the magic of stargazing at night, as the valley's peaceful ambiance sets the stage for an awe-inspiring celestial display."
+        ]
+      }
+    ]
   },
   {
     "id": 3,
     "spotPhoto": "https://i.ibb.co/myNHzYy/cox-s-bazar.png",
     "tourType": "Nature",
     "tripTitle": "Sea Beach Tour",
-    "price": "$499"
+    "price": "$499",
+    "about": "Experience the beauty of coastal landscapes with the Sea Beach Tour. Relax on the sandy shores of Cox's Bazar, explore charming fishing villages, and embark on a scuba diving adventure in the Bay of Bengal. Conclude each day with a delightful seafood feast. Discover the serenity of the sea and the vibrant marine life beneath the waves.",
+    "tourPlan": [
+      {
+        "day": 1,
+        "activities": [
+          "Relax on the sandy shores of Cox's Bazar, enjoying the soothing rhythm of the waves and the warm embrace of the sun.",
+          "Embark on a memorable sunset cruise, where the sun dips below the horizon, painting the sky in a kaleidoscope of colors."
+        ]
+      },
+      {
+        "day": 2,
+        "activities": [
+          "Explore charming fishing villages along the coast, discovering the daily lives of the local communities and their maritime traditions.",
+          "Engage in friendly competition with a game of beach volleyball, feeling the sand beneath your feet and the sea breeze in your hair."
+        ]
+      },
+      {
+        "day": 3,
+        "activities": [
+          "Embark on a scuba diving adventure, unveiling the vibrant underwater world of the Bay of Bengal. Encounter diverse marine life.",
+          "Savor a seafood feast, indulging in the region's freshest catches prepared with local flavors, creating a culinary delight."
+        ]
+      }
+    ]
   }
 ]

@@ -1,4 +1,5 @@
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import useGuides from "../../../Hook/useGuides";
 import usePackages from "../../../Hook/usePackages";
 import vid1 from "../../../assets/1.mp4";
@@ -26,7 +27,6 @@ const TourismAndTravel = () => {
           role="tab"
           className="tab"
           aria-label="Overview"
-          defaultChecked
         />
         <div
           role="tabpanel"
@@ -146,11 +146,14 @@ const TourismAndTravel = () => {
                   <p className="font-poppins group-hover:font-bold">
                     Price: ${tourPackage.price}
                   </p>
-                  <div className="card-actions font-poppins ">
+                  <Link
+                    to={`package/details/${tourPackage._id}`}
+                    className="card-actions font-poppins "
+                  >
                     <button className="btn btn-block btn-warning uppercase group-hover:text-white">
                       View Package
                     </button>
-                  </div>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -163,6 +166,7 @@ const TourismAndTravel = () => {
           role="tab"
           className="tab"
           aria-label="Guides"
+          defaultChecked
         />
         <div
           role="tabpanel"
