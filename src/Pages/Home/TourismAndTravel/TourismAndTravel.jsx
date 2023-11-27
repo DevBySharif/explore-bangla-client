@@ -158,6 +158,11 @@ const TourismAndTravel = () => {
               </div>
             ))}
           </div>
+          <div className="flex justify-end items-center my-4">
+            <Link to="/packages/allPackages">
+              <button className="btn btn-warning">All Packages</button>
+            </Link>
+          </div>
         </div>
 
         <input
@@ -206,9 +211,12 @@ const TourismAndTravel = () => {
                     <button className="flex-1 border border-orange-300 rounded-[4px] py-3 text-white bg-orange-400 transition-all duration-150 ease-in hover:bg-orange-500">
                       Message
                     </button>
-                    <button className="flex-1 border border-orange-300 rounded-[4px] py-3 text-white bg-orange-400 transition-all duration-150 ease-in hover:bg-orange-500">
-                      Details
-                    </button>
+                    <Link
+                      className="flex-1 border border-orange-300 rounded-[4px] py-3 text-white bg-orange-400 transition-all duration-150 ease-in hover:bg-orange-500 text-center"
+                      to={`/guide/profile/${guide._id}`}
+                    >
+                      <button>Details</button>
+                    </Link>
                   </div>
                   <div className="text-black p-4 text-sm font-semibold backdrop-blur-sm">
                     <p>SKILLS</p>
