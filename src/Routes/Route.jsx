@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import Mainlayout from "../Layout/Mainlayout/Mainlayout";
+import AddPackage from "../Pages/Dashboard/Admin/AddPackage/AddPackage";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import MyProfile from "../Pages/Dashboard/Admin/MyProfile/MyProfile";
 import Error from "../Pages/ErrorPage/Error";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Home/Login/Login";
@@ -59,6 +62,20 @@ const Route = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+    children: [
+      {
+        path: "admin/myProfile",
+        element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "admin/addPackage",
+        element: <AddPackage></AddPackage>,
+      },
+      {
+        path: "admin/manageUsers",
+        element: <ManageUsers></ManageUsers>,
+      },
+    ],
   },
 ]);
 
