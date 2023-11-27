@@ -2,7 +2,7 @@ import useStories from "../../../Hook/useStories";
 
 const AllStories = () => {
   const allStories = useStories();
-  console.log(allStories);
+
   return (
     <div>
       {allStories?.map((story) => (

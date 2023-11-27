@@ -1,21 +1,22 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../Hook/useAuth";
+import useAxiosPublic from "../../../Hook/useAxiosPublic";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { createUser } = useAuth();
+  const navigate = useNavigate();
+  const axiosPublic = useAxiosPublic();
+  const { createUser, updateUserProfile } = useAuth();
   const [registerError, setRegisterError] = useState("");
   const [registrationSuccess, setRegistrationSuccess] = useState("");
-
-  const location = useLocation();
-  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
+    const name = e.target.name.value;
     const password = e.target.password.value;
     const photo = e.target.photo.value;
     const accepted = e.target.terms.checked;
@@ -42,10 +43,23 @@ const Register = () => {
 
     // create user
     createUser(email, password)
-      .then(() => {
-        // setRegistrationSuccess("Registration Successful");
-        toast.success("Registration Successful!");
-        navigate(location?.state ? location.state : "/login");
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(name, photo).then(() => {
+          const userInfo = {
+            name: name,
+            email: email,
+          };
+          axiosPublic.post("/users", userInfo).then((res) => {
+            console.log("user added to the database");
+            if (res.data.insertedId) {
+              toast.success("Registration Successful!");
+            }
+          });
+
+          navigate("/");
+        });
       })
       .catch((error) => {
         setRegisterError(error.message);
