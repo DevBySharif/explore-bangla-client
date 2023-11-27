@@ -53,7 +53,7 @@ const GuideProfile = () => {
                     Skills
                   </span>
                   <ul>
-                    {foundGuide.skills.map((skill, indx) => (
+                    {foundGuide?.skills.map((skill, indx) => (
                       <li key={indx} className="mb-2">
                         {skill}
                       </li>
@@ -166,11 +166,15 @@ const GuideProfile = () => {
                   </a>
                 </div>
 
-                <h2 className="text-xl font-bold mt-6 mb-4 font-poppins">
-                  Education:{foundGuide.education}
+                <h2 className="text-xl font-bold mt-6 mb-4 ">
+                  Education:
+                  {""}
+                  <span className="font-poppins font-medium">
+                    {foundGuide?.education}
+                  </span>
                 </h2>
                 <h2 className="text-xl font-bold mt-6 mb-4">Experience</h2>
-                {foundGuide.workExperience.map((work) => (
+                {foundGuide?.workExperience.map((work) => (
                   <div key={work.id} className="mb-6">
                     <div className="flex justify-between">
                       <span className="text-gray-600 font-bold font-poppins">

@@ -1,6 +1,7 @@
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import useStories from "../../../Hook/useStories";
 
 const TouristStories = () => {
@@ -34,7 +35,7 @@ const TouristStories = () => {
     return () => {
       keenSlider.destroy();
     };
-  }, []);
+  }, [stories]);
 
   return (
     <div className="lg:mt-48">
@@ -47,7 +48,7 @@ const TouristStories = () => {
       <section>
         <div className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
           <div className="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
-            <h2 className="max-w-xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl capitalize">
+            <h2 className="max-w-xl text-2xl  tracking-tight text-gray-900 sm:text-5xl capitalize">
               Read travel stories from our customers
             </h2>
 
@@ -98,7 +99,7 @@ const TouristStories = () => {
 
           <div className="-mx-6 mt-8 lg:col-span-2 lg:mx-0">
             <div id="keen-slider" className="keen-slider">
-              {stories.map((story) => (
+              {stories?.map((story) => (
                 <div key={story._id} className="keen-slider__slide">
                   <blockquote className="flex h-full flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
                     <div>
@@ -153,6 +154,11 @@ const TouristStories = () => {
                   </blockquote>
                 </div>
               ))}
+            </div>
+            <div className="flex justify-end">
+              <Link to="/allStories">
+                <button className="btn btn-warning">All Stories</button>
+              </Link>
             </div>
           </div>
         </div>

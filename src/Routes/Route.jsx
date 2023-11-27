@@ -8,6 +8,7 @@ import AllPackages from "../Pages/Home/PackageDetails/AllPackages";
 import PackageDetails from "../Pages/Home/PackageDetails/PackageDetails";
 import Register from "../Pages/Home/Register/Register";
 import GuideProfile from "../Pages/Home/TourismAndTravel/GuideProfile";
+import AllStories from "../Pages/Home/TouristStories/AllStories";
 import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
@@ -31,6 +32,10 @@ const Route = createBrowserRouter([
       {
         path: "guide/profile/:id",
         element: <GuideProfile></GuideProfile>,
+      },
+      {
+        path: "allStories",
+        element: <AllStories></AllStories>,
       },
     ],
   },
