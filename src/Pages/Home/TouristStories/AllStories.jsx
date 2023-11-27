@@ -1,13 +1,6 @@
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  FacebookShareCount,
-} from "react-share";
 import useStories from "../../../Hook/useStories";
 
 const AllStories = () => {
-  const shareUrl = "http://facebook.com";
-  const title = "Facebook";
   const allStories = useStories();
   console.log(allStories);
   return (
@@ -31,24 +24,6 @@ const AllStories = () => {
                 <p className="mt-4 text-gray-600">{story?.description}</p>
 
                 <h2 className="text-end">----{story?.customerName}</h2>
-                <div className="Demo__some-network flex justify-start items-center">
-                  <h2>share---</h2>
-                  <FacebookShareButton
-                    url={shareUrl}
-                    className="Demo__some-network__share-button"
-                  >
-                    <FacebookIcon size={32} round />
-                  </FacebookShareButton>
-
-                  <div>
-                    <FacebookShareCount
-                      url={shareUrl}
-                      className="Demo__some-network__share-count"
-                    >
-                      {(count) => count}
-                    </FacebookShareCount>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
