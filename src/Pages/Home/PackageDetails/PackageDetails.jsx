@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useLocation, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../../Hook/useAuth";
 import useGuides from "../../../Hook/useGuides";
 import usePackages from "../../../Hook/usePackages";
@@ -7,7 +7,7 @@ import usePackages from "../../../Hook/usePackages";
 const PackageDetails = () => {
   const [showModal, setShowModal] = useState(false);
   const { user } = useAuth();
-  const location = useLocation();
+  const navigate = useNavigate();
   const tourPackages = usePackages();
   const touristGuide = useGuides();
 
@@ -20,11 +20,14 @@ const PackageDetails = () => {
 
   const handleBookNow = (event) => {
     event.preventDefault();
-    document.getElementById("my_modal_1").showModal();
+
     if (!user) {
+      navigate("/login");
     } else {
+      document.getElementById("my_modal_1").showModal();
     }
   };
+
   return (
     <div>
       <h1 className="text-5xl text-center capitalize mt-12">
@@ -273,27 +276,20 @@ const PackageDetails = () => {
                     <button className="btn btn-warning" onClick={handleBookNow}>
                       Book Now
                     </button>
-                    {user ? (
-                      <dialog id="my_modal_1" className="modal">
-                        <div className="modal-box">
-                          <h3 className="font-bold text-lg">Hello!</h3>
-                          <p className="py-4">
-                            Press ESC key or click the button below to close
-                          </p>
-                          <div className="modal-action">
-                            <form method="dialog">
-                              <button className="btn">Close</button>
-                            </form>
-                          </div>
+
+                    <dialog id="my_modal_1" className="modal">
+                      <div className="modal-box">
+                        <h3 className="font-bold text-lg">Hello!</h3>
+                        <p className="py-4">
+                          Press ESC key or click the button below to close
+                        </p>
+                        <div className="modal-action">
+                          <form method="dialog">
+                            <button className="btn">Close</button>
+                          </form>
                         </div>
-                      </dialog>
-                    ) : (
-                      <Navigate
-                        to="/login"
-                        state={{ from: location }}
-                        replace
-                      ></Navigate>
-                    )}
+                      </div>
+                    </dialog>
                   </div>
                 </div>
               </fieldset>

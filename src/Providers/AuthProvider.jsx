@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Config/firebase.config";
+import useAxiosPublic from "../Hook/useAxiosPublic";
 
 export const AuthContext = createContext(null);
 
@@ -17,7 +18,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const axiosPublic = useAxiosPublic();
   const googleLogin = () => {
     return signInWithPopup(auth, googleProvider);
   };
@@ -46,33 +47,24 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      //   const userEmail = currentUser?.email || user?.email;
-      //   const loggedUser = { email: userEmail };
       setUser(currentUser);
       setLoading(false);
-      //   if (currentUser) {
-      //     axios
-      //       .post("https://tranquoasis-server.vercel.app/jwt", loggedUser, {
-      //         withCredentials: true,
-      //       })
-      //       .then((res) => {
-      //         console.log("token response", res.data);
-      //       });
-      //   } else {
-      //     axios
-      //       .post("https://tranquoasis-server.vercel.app/logout", loggedUser, {
-      //         withCredentials: true,
-      //       })
-      //       .then((res) => {
-      //         console.log(res.data);
-      //       });
-      //   }
+      if (currentUser) {
+        const userInfo = { email: currentUser.email };
+        axiosPublic.post("/jwt", userInfo).then((res) => {
+          if (res.data.token) {
+            localStorage.setItem("access-token", res.data.token);
+          }
+        });
+      } else {
+        localStorage.removeItem("access-token");
+      }
     });
 
     return () => {
       unSubscribe();
     };
-  }, [user?.email]);
+  }, [axiosPublic]);
 
   const authInfo = {
     user,
