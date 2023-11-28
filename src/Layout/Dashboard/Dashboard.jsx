@@ -1,11 +1,13 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import useAdmin from "../../Hook/useAdmin";
+import useGuide from "../../Hook/useGuide";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const pathnames = location.pathname.split("/").filter((x) => x);
   const [isAdmin] = useAdmin();
-  console.log(isAdmin);
+  const [isGuide] = useGuide();
+  console.log(isGuide);
   return (
     <div className="flex">
       <div className="min-h-screen bg-gray-50/50">
@@ -107,10 +109,10 @@ const Dashboard = () => {
                     </NavLink>
                   </li>
                 </>
-              ) : (
+              ) : isGuide ? (
                 <>
                   <li>
-                    <NavLink to="/dashboard/admin/myProfile" className="">
+                    <NavLink to="/dashboard/guide/myProfile" className="">
                       <button
                         className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                         type="button"
@@ -130,6 +132,91 @@ const Dashboard = () => {
                         </svg>
                         <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
                           my profile
+                        </p>
+                      </button>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/guide/myAssignedTour" className="">
+                      <button
+                        className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                      >
+                        <svg
+                          className="w-[20px] h-[20px] fill-[#ffffff]"
+                          viewBox="0 0 640 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M192 128c0-17.7 14.3-32 32-32s32 14.3 32 32v7.8c0 27.7-2.4 55.3-7.1 82.5l-84.4 25.3c-40.6 12.2-68.4 49.6-68.4 92v71.9c0 40 32.5 72.5 72.5 72.5c26 0 50-13.9 62.9-36.5l13.9-24.3c26.8-47 46.5-97.7 58.4-150.5l94.4-28.3-12.5 37.5c-3.3 9.8-1.6 20.5 4.4 28.8s15.7 13.3 26 13.3H544c17.7 0 32-14.3 32-32s-14.3-32-32-32H460.4l18-53.9c3.8-11.3 .9-23.8-7.4-32.4s-20.7-11.8-32.2-8.4L316.4 198.1c2.4-20.7 3.6-41.4 3.6-62.3V128c0-53-43-96-96-96s-96 43-96 96v32c0 17.7 14.3 32 32 32s32-14.3 32-32V128zm-9.2 177l49-14.7c-10.4 33.8-24.5 66.4-42.1 97.2l-13.9 24.3c-1.5 2.6-4.3 4.3-7.4 4.3c-4.7 0-8.5-3.8-8.5-8.5V335.6c0-14.1 9.3-26.6 22.8-30.7zM24 368c-13.3 0-24 10.7-24 24s10.7 24 24 24H64.3c-.2-2.8-.3-5.6-.3-8.5V368H24zm592 48c13.3 0 24-10.7 24-24s-10.7-24-24-24H305.9c-6.7 16.3-14.2 32.3-22.3 48H616z"></path>
+                        </svg>
+                        <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                          my Assigned Tour
+                        </p>
+                      </button>
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink to="/dashboard/tourist/myProfile" className="">
+                      <button
+                        className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                          className="w-5 h-5 text-inherit"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                            clipRule="evenodd"
+                          ></path>
+                        </svg>
+                        <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                          my profile
+                        </p>
+                      </button>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/tourist/myBookings" className="">
+                      <button
+                        className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                      >
+                        <svg
+                          className="w-[20px] h-[20px] fill-[#ffffff]"
+                          viewBox="0 0 512 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M128 32V64H80c-26.5 0-48 21.5-48 48v48H480V112c0-26.5-21.5-48-48-48H384V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H192V32c0-17.7-14.3-32-32-32s-32 14.3-32 32zM480 192H32V464c0 26.5 21.5 48 48 48H432c26.5 0 48-21.5 48-48V192zM256 248c13.3 0 24 10.7 24 24v56h56c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v56c0 13.3-10.7 24-24 24s-24-10.7-24-24V376H176c-13.3 0-24-10.7-24-24s10.7-24 24-24h56V272c0-13.3 10.7-24 24-24z"></path>
+                        </svg>
+                        <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                          my bookings
+                        </p>
+                      </button>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/dashboard/tourist/myWishlist" className="">
+                      <button
+                        className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                        type="button"
+                      >
+                        <svg
+                          className="w-[20px] h-[20px] fill-[#ffffff]"
+                          viewBox="0 0 384 512"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M14 2.2C22.5-1.7 32.5-.3 39.6 5.8L80 40.4 120.4 5.8c9-7.7 22.3-7.7 31.2 0L192 40.4 232.4 5.8c9-7.7 22.3-7.7 31.2 0L304 40.4 344.4 5.8c7.1-6.1 17.1-7.5 25.6-3.6s14 12.4 14 21.8V488c0 9.4-5.5 17.9-14 21.8s-18.5 2.5-25.6-3.6L304 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L192 471.6l-40.4 34.6c-9 7.7-22.3 7.7-31.2 0L80 471.6 39.6 506.2c-7.1 6.1-17.1 7.5-25.6 3.6S0 497.4 0 488V24C0 14.6 5.5 6.1 14 2.2zM96 144c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96zM80 352c0 8.8 7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96c-8.8 0-16 7.2-16 16zM96 240c-8.8 0-16 7.2-16 16s7.2 16 16 16H288c8.8 0 16-7.2 16-16s-7.2-16-16-16H96z"></path>
+                        </svg>
+                        <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                          my wishlist
                         </p>
                       </button>
                     </NavLink>

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 
@@ -24,6 +24,16 @@ const ManageUsers = () => {
       if (res.data.modifiedCount > 0) {
         refetch();
         toast.success(`${user.name} is an admin now`);
+      }
+    });
+  };
+
+  const handleMakeTourGuide = (user) => {
+    axiosSecure.patch(`/users/guide/${user._id}`).then((res) => {
+      console.log(res.data);
+      if (res.data.modifiedCount > 0) {
+        refetch();
+        toast.success(`${user.name} is an guide now`);
       }
     });
   };
@@ -57,12 +67,11 @@ const ManageUsers = () => {
     <div>
       <div className="flex justify-evenly my-4">
         <h1>All Users</h1>
-        <h1>Total Users:{users.length}</h1>
+        <h1>Total Users: {users.length}</h1>
       </div>
       <div>
         <div className="overflow-x-auto">
           <table className="table table-zebra">
-            {/* head */}
             <thead>
               <tr>
                 <th></th>
@@ -78,19 +87,29 @@ const ManageUsers = () => {
                   <th>{index + 1}</th>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
+                  <td className="capitalize">{user.role || "tourist"}</td>
                   <td>
-                    {user.role === "admin" ? (
-                      "Admin"
-                    ) : (
+                    <>
                       <button
                         onClick={() => handleMakeAdmin(user)}
-                        className="btn btn-ghost"
+                        className={`btn btn-ghost ${
+                          user.role === "admin" ? "disabled" : ""
+                        }`}
+                        disabled={user.role === "admin"}
                       >
-                        <FaUsers className="text-amber-400 text-xl"></FaUsers>
+                        Make Admin
                       </button>
-                    )}
-                  </td>
-                  <td>
+                      <button
+                        onClick={() => handleMakeTourGuide(user)}
+                        className={`btn btn-ghost ${
+                          user.role === "guide" ? "disabled" : ""
+                        }`}
+                        disabled={user.role === "guide"}
+                      >
+                        Make Tour Guide
+                      </button>
+                    </>
+
                     <button
                       onClick={() => handleDelete(user)}
                       className="btn btn-ghost"

@@ -4,6 +4,12 @@ import Mainlayout from "../Layout/Mainlayout/Mainlayout";
 import AddPackage from "../Pages/Dashboard/Admin/AddPackage/AddPackage";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyProfile from "../Pages/Dashboard/Admin/MyProfile/MyProfile";
+
+import GuidesProfile from "../Pages/Dashboard/Guide/GuideProfile/GuidesProfile";
+import MyAssignedTours from "../Pages/Dashboard/Guide/MyAssignedTours/MyAssignedTours";
+import MyBookings from "../Pages/Dashboard/Tourist/MyBookings/MyBookings";
+import MyWishlist from "../Pages/Dashboard/Tourist/MyWishlist/MyWishlist";
+import TouristProfile from "../Pages/Dashboard/Tourist/TouristProfile/TouristProfile";
 import Error from "../Pages/ErrorPage/Error";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Home/Login/Login";
@@ -74,6 +80,26 @@ const Route = createBrowserRouter([
       {
         path: "admin/manageUsers",
         element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "tourist/myProfile",
+        element: <TouristProfile></TouristProfile>,
+      },
+      {
+        path: "tourist/myBookings",
+        element: <MyBookings></MyBookings>,
+      },
+      {
+        path: "tourist/myWishlist",
+        element: <MyWishlist></MyWishlist>,
+      },
+      {
+        path: "guide/myProfile",
+        element: <GuidesProfile></GuidesProfile>,
+      },
+      {
+        path: "guide/myAssignedTour",
+        element: <MyAssignedTours></MyAssignedTours>,
       },
     ],
   },
