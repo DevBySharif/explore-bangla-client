@@ -6,6 +6,7 @@ import useGuides from "../../../Hook/useGuides";
 const GuideProfile = () => {
   const { user } = useAuth();
   const guides = useGuides();
+  console.log(guides);
   const { id } = useParams();
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
