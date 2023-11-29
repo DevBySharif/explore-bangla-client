@@ -32,7 +32,7 @@ const Navbar = () => {
       <li>
         <Link
           className="font-poppins font-medium hover:border-b-4 border-orange-500"
-          to="/"
+          to="/blogs"
         >
           Blogs
         </Link>
