@@ -1,5 +1,8 @@
+import toast from "react-hot-toast";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import useAuth from "../../../Hook/useAuth";
+import useAxiosPublic from "../../../Hook/useAxiosPublic";
 import useGuides from "../../../Hook/useGuides";
 import usePackages from "../../../Hook/usePackages";
 import vid1 from "../../../assets/1.mp4";
@@ -9,6 +12,27 @@ import vid4 from "../../../assets/4.mp4";
 const TourismAndTravel = () => {
   const packages = usePackages();
   const guides = useGuides();
+  const axiosPublic = useAxiosPublic();
+  const { user } = useAuth();
+
+  const handleWishlist = (tourPackage) => {
+    const wishListInfo = {
+      packageId: tourPackage._id,
+      packageName: tourPackage.tripTitle,
+      email: user?.email,
+    };
+    console.log(wishListInfo);
+    axiosPublic
+      .post("/wishlist", wishListInfo)
+      .then((res) => {
+        if (res.data.insertedId) {
+          toast.success("Added to your wishlist");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div className="mt-24">
@@ -138,7 +162,10 @@ const TourismAndTravel = () => {
                 <div className="card-body group">
                   <div className="flex justify-between">
                     <h2 className="card-title">{tourPackage.tripTitle}</h2>
-                    <FaHeart className="text-3xl text-red-500 transition-all duration-150 ease-in hover:scale-125 cursor-pointer slide-in-elliptic-top-fwd"></FaHeart>
+                    <FaHeart
+                      onClick={() => handleWishlist(tourPackage)}
+                      className="text-3xl text-red-500 transition-all duration-150 ease-in hover:scale-125 cursor-pointer slide-in-elliptic-top-fwd"
+                    ></FaHeart>
                   </div>
                   <p className="font-poppins  group-hover:font-bold">
                     Tour Type: {tourPackage.tourType}

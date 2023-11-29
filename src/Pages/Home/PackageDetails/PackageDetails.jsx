@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRef } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../../Hook/useAuth";
+import useAxiosPublic from "../../../Hook/useAxiosPublic";
 import useGuides from "../../../Hook/useGuides";
 import usePackages from "../../../Hook/usePackages";
 
 const PackageDetails = () => {
-  const [showModal, setShowModal] = useState(false);
   const { user } = useAuth();
   const navigate = useNavigate();
   const tourPackages = usePackages();
   const touristGuide = useGuides();
-
+  const touristGuideRef = useRef();
+  const axiosPublic = useAxiosPublic();
   const packageId = useParams();
 
   const foundPackage = tourPackages.find((tour) => tour._id === packageId.id);
@@ -26,6 +28,36 @@ const PackageDetails = () => {
     } else {
       document.getElementById("my_modal_1").showModal();
     }
+
+    const packageName = event.target.packageName.value;
+    const touristName = event.target.touristName.value;
+    const touristEmail = event.target.touristEmail.value;
+    const touristImage = event.target.touristImage.value;
+    const touristGuide = touristGuideRef.current.value;
+    const price = event.target.price.value;
+    const date = event.target.date.value;
+
+    const bookingData = {
+      packageName,
+      touristName,
+      touristEmail,
+      touristImage,
+      touristGuide,
+      price,
+      date,
+    };
+    console.log(bookingData);
+
+    axiosPublic
+      .post("/bookings", bookingData)
+      .then((res) => {
+        if (res.data.insertedId) {
+          toast.success("Booking Placed");
+        }
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   return (
@@ -63,7 +95,7 @@ const PackageDetails = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+                src="https://i.ibb.co/zGb38XP/405541508-7440815592615003-14808.png"
               />
             </div>
             <div className="w-1/2 p-1 md:p-2">
@@ -181,8 +213,7 @@ const PackageDetails = () => {
         <div>
           <section className="p-6 text-gray-900">
             <form
-              noValidate=""
-              action=""
+              onSubmit={handleBookNow}
               className="container flex flex-col mx-auto space-y-12"
             >
               <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm ">
@@ -253,8 +284,11 @@ const PackageDetails = () => {
                     <label className="label">
                       <span className="label-text">Tour Guide</span>
                     </label>
-                    <select className="select select-bordered">
-                      <option disabled selected>
+                    <select
+                      ref={touristGuideRef}
+                      className="select select-bordered"
+                    >
+                      <option disabled defaultValue={"pick one"}>
                         Pick one
                       </option>
                       {touristGuide.map((guide) => (
@@ -273,16 +307,22 @@ const PackageDetails = () => {
                     />
                   </div>
                   <div>
-                    <button className="btn btn-warning" onClick={handleBookNow}>
+                    <button className="btn btn-warning" type="submit">
                       Book Now
                     </button>
 
                     <dialog id="my_modal_1" className="modal">
                       <div className="modal-box">
-                        <h3 className="font-bold text-lg">Hello!</h3>
-                        <p className="py-4">
-                          Press ESC key or click the button below to close
-                        </p>
+                        <h3 className="font-bold text-lg text-center">
+                          Confirm your Booking
+                        </h3>
+                        <div className="text-center mt-4">
+                          <Link to="/dashboard/tourist/myBookings">
+                            <button className="btn text-center">
+                              See My Bookings
+                            </button>
+                          </Link>
+                        </div>
                         <div className="modal-action">
                           <form method="dialog">
                             <button className="btn">Close</button>
