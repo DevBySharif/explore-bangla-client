@@ -6,6 +6,7 @@ import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import MyProfile from "../Pages/Dashboard/Admin/MyProfile/MyProfile";
 
 import AboutUs from "../Components/AboutUs/AboutUs";
+import ContactUs from "../Components/ContactUs/ContactUs";
 import GuidesProfile from "../Pages/Dashboard/Guide/GuideProfile/GuidesProfile";
 import MyAssignedTours from "../Pages/Dashboard/Guide/MyAssignedTours/MyAssignedTours";
 import MyBookings from "../Pages/Dashboard/Tourist/MyBookings/MyBookings";
@@ -55,6 +56,10 @@ const Route = createBrowserRouter([
       {
         path: "aboutUs",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "contactUs",
+        element: <ContactUs></ContactUs>,
       },
     ],
   },
