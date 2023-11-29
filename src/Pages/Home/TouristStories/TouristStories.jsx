@@ -132,7 +132,7 @@ const TouristStories = () => {
                                 </h3>
                               </a>
 
-                              <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                              <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700 font-poppins">
                                 {story.description}
                               </p>
                             </div>

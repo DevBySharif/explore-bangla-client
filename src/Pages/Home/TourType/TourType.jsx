@@ -77,7 +77,7 @@ const TourType = () => {
               <span className="mx-2">|</span>
               <div className="h-px bg-gray-500 flex-grow"></div>
             </div>
-            <p className="text-sm lg:text-base">
+            <p className="text-sm lg:text-base font-poppins">
               Plan a perfect getaway in a place where the sun shines all year.
               Explore pristine beaches, enjoy relaxed activities, and pamper
               yourself at the many wellness retreats.

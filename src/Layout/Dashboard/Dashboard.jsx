@@ -1,13 +1,18 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../Hook/useAdmin";
+import useAuth from "../../Hook/useAuth";
 import useGuide from "../../Hook/useGuide";
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  const { user, logOut } = useAuth();
   const pathnames = location.pathname.split("/").filter((x) => x);
   const [isAdmin] = useAdmin();
   const [isGuide] = useGuide();
-  console.log(isGuide);
+
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
+
   return (
     <div className="flex">
       <div className="min-h-screen bg-gray-50/50">
@@ -46,7 +51,11 @@ const Dashboard = () => {
               {isAdmin ? (
                 <>
                   <li>
-                    <NavLink to="/dashboard/admin/myProfile" className="">
+                    <NavLink
+                      to="/dashboard/admin/myProfile"
+                      activeClassName="active"
+                      exact
+                    >
                       <button
                         className="font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                         type="button"
@@ -228,11 +237,30 @@ const Dashboard = () => {
             <ul className="mb-4 flex flex-col gap-1">
               <li className="mx-3.5 mt-4 mb-2">
                 <p className="block antialiased font-sans text-sm leading-normal text-white font-black uppercase opacity-75">
-                  auth pages
+                  Other pages
                 </p>
               </li>
               <li>
-                <a className="" href="#">
+                <Link to="/">
+                  <button
+                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
+                    type="button"
+                  >
+                    <svg
+                      className="w-[20px] h-[20px] fill-[#ffffff]"
+                      viewBox="0 0 576 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32V448c0 35.3 28.7 64 64 64H448.5c35.5 0 64.2-28.8 64-64.3l-.7-160.2h32zM288 160a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM176 400c0-44.2 35.8-80 80-80h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H192c-8.8 0-16-7.2-16-16z"></path>
+                    </svg>
+                    <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
+                      Home
+                    </p>
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <Link to="/register">
                   <button
                     className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
                     type="button"
@@ -251,31 +279,10 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      sign in
+                      Register
                     </p>
                   </button>
-                </a>
-              </li>
-              <li>
-                <a className="" href="#">
-                  <button
-                    className="middle none font-sans font-bold center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-white hover:bg-white/10 active:bg-white/30 w-full flex items-center gap-4 px-4 capitalize"
-                    type="button"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="w-5 h-5 text-inherit"
-                    >
-                      <path d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z"></path>
-                    </svg>
-                    <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      sign up
-                    </p>
-                  </button>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -347,7 +354,7 @@ const Dashboard = () => {
                   </span>
                 </button>
                 <a href="#">
-                  <button
+                  {/* <button
                     className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 hidden items-center gap-1 px-4 xl:flex"
                     type="button"
                   >
@@ -365,7 +372,49 @@ const Dashboard = () => {
                       ></path>
                     </svg>
                     Sign In{" "}
-                  </button>
+                  </button> */}
+                  {user?.email ? (
+                    <div className="dropdown dropdown-end">
+                      <label
+                        tabIndex={0}
+                        className="btn btn-info btn-circle avatar"
+                      >
+                        <div className="w-10 rounded-full">
+                          <img src={user?.photoURL} alt={user?.displayName} />
+                        </div>
+                      </label>
+                      <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-content rounded-box w-auto"
+                      >
+                        <li>
+                          <button className="btn btn-sm text-white btn-ghost pointer-events-none">
+                            {user?.displayName}
+                          </button>
+                        </li>
+                        <li>
+                          <button className="btn btn-sm text-white btn-ghost pointer-events-none">
+                            {user?.email}
+                          </button>
+                        </li>
+
+                        <li>
+                          <button
+                            className="btn btn-sm text-white btn-ghost"
+                            onClick={handleSignOut}
+                          >
+                            Logout
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  ) : (
+                    <Link to="/login">
+                      <button className="px-6 py-2 font-medium bg-orange-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                        Login
+                      </button>
+                    </Link>
+                  )}
                   <button
                     className="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden"
                     type="button"

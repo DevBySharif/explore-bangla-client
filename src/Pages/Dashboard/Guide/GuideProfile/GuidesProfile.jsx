@@ -3,10 +3,10 @@ import useAuth from "../../../../Hook/useAuth";
 const GuidesProfile = () => {
   const { user } = useAuth();
   return (
-    <div>
+    <div className="shadow-transparent">
       <div>
         <div>
-          <div className="bg-gray-100">
+          <div>
             <div className="container mx-auto py-8">
               <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
                 <div className="col-span-4 sm:col-span-3">
