@@ -7,6 +7,7 @@ import MyProfile from "../Pages/Dashboard/Admin/MyProfile/MyProfile";
 
 import AboutUs from "../Components/AboutUs/AboutUs";
 import Blogs from "../Components/Blogs/Blogs";
+import Community from "../Components/Community/Community";
 import ContactUs from "../Components/ContactUs/ContactUs";
 import GuidesProfile from "../Pages/Dashboard/Guide/GuideProfile/GuidesProfile";
 import MyAssignedTours from "../Pages/Dashboard/Guide/MyAssignedTours/MyAssignedTours";
@@ -22,6 +23,7 @@ import Register from "../Pages/Home/Register/Register";
 import GuideProfile from "../Pages/Home/TourismAndTravel/GuideProfile";
 import AllStories from "../Pages/Home/TouristStories/AllStories";
 import StoryDetails from "../Pages/Home/TouristStories/StoryDetails";
+import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 const Route = createBrowserRouter([
@@ -66,6 +68,10 @@ const Route = createBrowserRouter([
         path: "blogs",
         element: <Blogs></Blogs>,
       },
+      {
+        path: "community",
+        element: <Community></Community>,
+      },
     ],
   },
   {
@@ -86,15 +92,27 @@ const Route = createBrowserRouter([
     children: [
       {
         path: "admin/myProfile",
-        element: <MyProfile></MyProfile>,
+        element: (
+          <AdminRoute>
+            <MyProfile></MyProfile>
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/addPackage",
-        element: <AddPackage></AddPackage>,
+        element: (
+          <AdminRoute>
+            <AddPackage></AddPackage>
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/manageUsers",
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <AdminRoute>
+            <ManageUsers></ManageUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "tourist/myProfile",
