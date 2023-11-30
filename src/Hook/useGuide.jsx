@@ -12,7 +12,7 @@ const useGuide = () => {
       return res.data?.guide;
     },
   });
-  console.log(isGuide);
+
   return [isGuide, isGuideLoading];
 };
 

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import useAuth from "../../../../Hook/useAuth";
 import useAxiosPublic from "../../../../Hook/useAxiosPublic";
 
@@ -47,10 +48,12 @@ const MyWishlist = () => {
             {userWishlist?.map((wish, indx) => (
               <tr key={wish._id}>
                 <th>{indx + 1}</th>
-                <td>{wish._id}</td>
+                <td>{wish.packageId}</td>
                 <td>{wish.packageName}</td>
                 <td>
-                  <button className="btn btn-ghost">Details</button>
+                  <Link to={`/package/details/${wish.packageId}`}>
+                    <button className="btn btn-ghost">Details</button>
+                  </Link>
                 </td>
                 <td>
                   <button

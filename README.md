@@ -2,7 +2,7 @@
 
 Welcome to Explore Bangla - Your Ultimate Guide to Travel and Adventure in Bangladesh!
 
-[Explore Bangla Live Site](https://explore-bangla.com)
+[Explore Bangla Live Site](https://explore-bangla-8ed9d.web.app)
 
 ## Key Features for Users
 

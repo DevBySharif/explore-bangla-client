@@ -126,11 +126,9 @@ const TouristStories = () => {
 
                           <div className="flex flex-1 flex-col justify-between">
                             <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                              <a href="#">
-                                <h3 className="font-bold uppercase text-gray-900">
-                                  {story.title}
-                                </h3>
-                              </a>
+                              <h3 className="font-bold uppercase text-gray-900">
+                                {story.title}
+                              </h3>
 
                               <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700 font-poppins">
                                 {story.description}
@@ -138,9 +136,9 @@ const TouristStories = () => {
                             </div>
 
                             <div className="sm:flex sm:items-end sm:justify-end">
-                              <a className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400">
+                              <p className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400">
                                 Read More
-                              </a>
+                              </p>
                             </div>
                           </div>
                         </article>

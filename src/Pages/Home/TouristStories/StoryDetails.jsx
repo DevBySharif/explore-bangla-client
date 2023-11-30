@@ -32,6 +32,7 @@ const StoryDetails = () => {
               <h2 className="text-end">----{story?.customerName}</h2>
               <div className="Demo__some-network flex justify-start items-center">
                 <h2>share---</h2>
+
                 <FacebookShareButton
                   url={shareUrl}
                   className="Demo__some-network__share-button"

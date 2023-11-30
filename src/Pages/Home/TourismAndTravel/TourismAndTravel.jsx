@@ -21,7 +21,7 @@ const TourismAndTravel = () => {
       packageName: tourPackage.tripTitle,
       email: user?.email,
     };
-    console.log(wishListInfo);
+
     axiosPublic
       .post("/wishlist", wishListInfo)
       .then((res) => {

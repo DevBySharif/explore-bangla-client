@@ -23,12 +23,6 @@ const PackageDetails = () => {
   const handleBookNow = (event) => {
     event.preventDefault();
 
-    if (!user) {
-      navigate("/login");
-    } else {
-      document.getElementById("my_modal_1").showModal();
-    }
-
     const packageName = event.target.packageName.value;
     const touristName = event.target.touristName.value;
     const touristEmail = event.target.touristEmail.value;
@@ -46,24 +40,28 @@ const PackageDetails = () => {
       price,
       date,
     };
-    console.log(bookingData);
+    if (!user) {
+      navigate("/login");
+    } else {
+      document.getElementById("my_modal_1").showModal();
 
-    axiosPublic
-      .post("/bookings", bookingData)
-      .then((res) => {
-        if (res.data.insertedId) {
-          toast.success("Booking Placed");
-        }
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+      axiosPublic
+        .post("/bookings", bookingData)
+        .then((res) => {
+          if (res.data.insertedId) {
+            toast.success("Booking Placed");
+          }
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+    }
   };
 
   return (
     <div>
       <h1 className="text-5xl text-center capitalize mt-12">
-        Discover all the packages we offer
+        See The Package Details
       </h1>
       <div className="container mx-auto px-5 py-2 lg:px-32 lg:pt-24">
         <div className="-m-1 flex flex-wrap md:-m-2">
@@ -86,7 +84,7 @@ const PackageDetails = () => {
               <img
                 alt="gallery"
                 className="block h-full w-full rounded-lg object-cover object-center"
-                src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                src={foundPackage.spotPhoto}
               />
             </div>
           </div>
@@ -118,7 +116,7 @@ const PackageDetails = () => {
       <div>
         <div>
           <h1 className="text-5xl capitalize text-center my-6">
-            About the Tour
+            About the Package
           </h1>
           <p className="font-poppins">{foundPackage.about}</p>
           <section className=" text-gray-800">
@@ -254,7 +252,7 @@ const PackageDetails = () => {
                     <input
                       name="touristEmail"
                       type="email"
-                      placeholder="Tourist Email"
+                      defaultValue={user?.email}
                       className="text-sm w-full rounded-md focus:ring focus:ri focus:ri border-gray-300 text-gray-900 font-poppins p-3 input input-bordered"
                     />
                   </div>

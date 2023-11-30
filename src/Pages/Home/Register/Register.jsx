@@ -52,7 +52,6 @@ const Register = () => {
             email: email,
           };
           axiosPublic.post("/users", userInfo).then((res) => {
-            console.log("user added to the database");
             if (res.data.insertedId) {
               toast.success("Registration Successful!");
             }

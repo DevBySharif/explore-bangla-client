@@ -4,13 +4,13 @@ const Banner = () => {
   return (
     <div className="hero ">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src={traveller} className="max-w-xl" />
+        <img src={traveller} className="lg:max-w-xl" />
 
         <div>
-          <p className="text-xl font-semibold uppercase mb-6 text-[#DF6951] font-poppins">
+          <p className="text-xl  font-semibold uppercase mb-6 text-[#DF6951] font-poppins">
             Explore the Unseen Treasures of Bangladesh
           </p>
-          <h1 className="text-5xl font-bold text-[#181E4B]">
+          <h1 className="lg:text-5xl md:text-3xl text-3xl font-bold text-[#181E4B]">
             Embark on a Journey Through{" "}
             <span className="text-green-500">Bangladesh&lsquo;s</span> Hidden
             Gems

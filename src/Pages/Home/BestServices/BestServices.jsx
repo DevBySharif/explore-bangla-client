@@ -11,7 +11,7 @@ const BestServices = () => {
         <small className="text-base font-poppins font-medium text-[#5E6282] text-center">
           SERVICE
         </small>
-        <h1 className="text-5xl font-bold capitalize text-[#14183E] mt-3">
+        <h1 className="lg:text-5xl md:text-3xl text-3xl font-bold capitalize text-[#14183E] mt-3">
           We Offer Best Services
         </h1>
       </div>
